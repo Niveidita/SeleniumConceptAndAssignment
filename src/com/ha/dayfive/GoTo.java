@@ -25,10 +25,16 @@ public class GoTo {
 		driver.findElement(By.id("last-name")).sendKeys("wick");
 		driver.findElement(By.id("login__email")).sendKeys("“john@gmail.com");
 		
+		
 		Select sel = new Select(driver.findElement(By.id("CompanySize")));  
 		sel.selectByVisibleText("10 - 99");
+//		sel.selectByIndex(2);
+//		sel.selectByVisibleText("Company Size");
 		
 		driver.findElement(By.xpath("//button[text()='Start My Trial']")).click();
+		
+		String actualTitle = driver.getTitle();				// to get the title 
+		System.out.println(actualTitle);
 		
 		
 	}
